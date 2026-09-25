@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  body {
+    @apply bg-white text-gray-700 antialiased overflow-x-hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', 'Poppins', sans-serif;
+  }
+}
+
+@layer components {
+  /* Replicating the authentic .thm-btn from reference website */
+  .thm-btn {
+    @apply inline-flex items-center justify-center px-7 py-3 text-sm font-bold uppercase tracking-wider text-white border-2 border-gold transition-all duration-300 relative overflow-hidden;
+  }
+
+  .thm-btn-gold {
+    @apply thm-btn bg-gold hover:bg-dark-900 hover:border-gold hover:text-white shadow-md hover:shadow-lg;
+  }
+
+  .thm-btn-outline {
+    @apply thm-btn bg-transparent text-white border-white hover:bg-gold hover:border-gold hover:text-white;
+  }
+
+  .thm-btn-dark {
+    @apply thm-btn bg-dark-900 text-white border-dark-900 hover:bg-gold hover:border-gold;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #1b1b1b;
+}
+::-webkit-scrollbar-thumb {
+  background: #d5ac63;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #b88e44;
+}
