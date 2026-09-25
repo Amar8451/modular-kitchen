@@ -13,13 +13,13 @@ const Button = ({
   icon: Icon,
   ...props
 }) => {
-  const baseStyles = 'inline-flex items-center justify-center font-bold uppercase tracking-wider transition-all duration-300 relative group overflow-hidden select-none';
+  const baseStyles = 'inline-flex items-center justify-center font-bold uppercase tracking-wider transition-all duration-300 relative group overflow-hidden select-none rounded-lg';
 
   const variants = {
-    gold: 'bg-gold hover:bg-dark-900 text-white border-2 border-gold hover:border-gold shadow-md hover:shadow-xl',
-    outline: 'bg-transparent text-white border-2 border-white hover:bg-gold hover:border-gold hover:text-white',
-    outlineDark: 'bg-transparent text-dark-900 border-2 border-dark-900 hover:bg-gold hover:border-gold hover:text-white',
-    dark: 'bg-dark-900 hover:bg-gold text-white border-2 border-dark-900 hover:border-gold shadow-md'
+    gold: 'bg-brand-orange hover:bg-brand-navy text-white border-2 border-brand-orange hover:border-brand-navy shadow-md hover:shadow-brand-orange/30 active:scale-[0.98]',
+    outline: 'bg-transparent text-white border-2 border-white/90 hover:bg-brand-orange hover:border-brand-orange hover:text-white active:scale-[0.98]',
+    outlineDark: 'bg-transparent text-navy-900 border-2 border-navy-900 hover:bg-brand-orange hover:border-brand-orange hover:text-white active:scale-[0.98]',
+    dark: 'bg-brand-navy hover:bg-brand-orange text-white border-2 border-brand-navy hover:border-brand-orange shadow-md active:scale-[0.98]'
   };
 
   const sizes = {

@@ -35,8 +35,9 @@ const Home = ({ onOpenQuote, onSelectService, onViewDetails }) => {
               <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
                 <img
                   src="/images/welcome/main-gallery.jpg"
-                  alt="Lakshmi Modular Kitchen Interior"
+                  alt="Laxmi Modular Kitchens & Interiors"
                   className="w-full h-80 sm:h-96 object-cover hover:scale-105 transition-transform duration-700"
+
                   onError={(e) => {
                     e.target.src = '/images/slides/1.jpg';
                   }}
@@ -67,18 +68,18 @@ const Home = ({ onOpenQuote, onSelectService, onViewDetails }) => {
             {/* Content Column */}
             <div className="lg:col-span-7 lg:pl-6">
               <div className="flex items-center gap-2 mb-3">
-                <span className="w-8 h-[2px] bg-gold inline-block"></span>
-                <span className="text-gold font-bold text-xs uppercase tracking-widest">
-                  Welcome to Lakshmi Modular Kitchen
+                <span className="w-8 h-[2px] bg-brand-orange inline-block"></span>
+                <span className="text-brand-orange font-bold text-xs uppercase tracking-widest">
+                  Welcome to Laxmi Modular Kitchens & Interiors
                 </span>
               </div>
 
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-dark-900 uppercase tracking-tight mb-4">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-navy-950 uppercase tracking-tight mb-4">
                 Established In The Year 2008 At Mumbai
               </h2>
 
               <p className="text-gray-600 text-sm sm:text-base leading-relaxed mb-6">
-                We <strong className="text-dark-900 font-semibold">Lakshmi Modular Kitchen</strong> are a leading Trader and Supplier of premium quality Kitchen Trolleys, Wall Cabinets, Acrylic Modules, and Bedroom Furniture. In our manufacturing and design process, we assure that only top-notch raw material is used along with ultra-modern machinery and precision tools.
+                We <strong className="text-navy-900 font-semibold">Laxmi Modular Kitchens & Interiors</strong> are a leading Trader and Supplier of premium quality Kitchen Trolleys, Wall Cabinets, Acrylic Modules, and Bedroom Furniture. In our manufacturing and design process, we assure that only top-notch raw material is used along with ultra-modern machinery and precision tools.
               </p>
 
               {/* Feature list */}

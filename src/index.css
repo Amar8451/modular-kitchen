@@ -5,34 +5,42 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   }
   
   body {
-    @apply bg-white text-gray-700 antialiased overflow-x-hidden;
+    @apply bg-white text-navy-800 antialiased overflow-x-hidden;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Montserrat', 'Poppins', sans-serif;
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+    letter-spacing: -0.015em;
   }
 }
 
 @layer components {
-  /* Replicating the authentic .thm-btn from reference website */
+  /* Replicating the authentic brand button */
   .thm-btn {
-    @apply inline-flex items-center justify-center px-7 py-3 text-sm font-bold uppercase tracking-wider text-white border-2 border-gold transition-all duration-300 relative overflow-hidden;
+    @apply inline-flex items-center justify-center px-7 py-3 text-sm font-bold uppercase tracking-wider text-white border-2 border-brand-orange transition-all duration-300 relative overflow-hidden rounded-md;
   }
 
-  .thm-btn-gold {
-    @apply thm-btn bg-gold hover:bg-dark-900 hover:border-gold hover:text-white shadow-md hover:shadow-lg;
+  .thm-btn-gold,
+  .thm-btn-orange {
+    @apply thm-btn bg-brand-orange hover:bg-brand-navy hover:border-brand-navy hover:text-white shadow-md hover:shadow-brand-orange/25;
   }
 
   .thm-btn-outline {
-    @apply thm-btn bg-transparent text-white border-white hover:bg-gold hover:border-gold hover:text-white;
+    @apply thm-btn bg-transparent text-white border-white/80 hover:bg-brand-orange hover:border-brand-orange hover:text-white;
   }
 
-  .thm-btn-dark {
-    @apply thm-btn bg-dark-900 text-white border-dark-900 hover:bg-gold hover:border-gold;
+  .thm-btn-dark,
+  .thm-btn-navy {
+    @apply thm-btn bg-brand-navy text-white border-brand-navy hover:bg-brand-orange hover:border-brand-orange;
+  }
+
+  /* Glassmorphism Card Style */
+  .glass-card {
+    @apply bg-white/85 backdrop-blur-md border border-white/40 shadow-xl;
   }
 }
 
@@ -41,12 +49,13 @@
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #1b1b1b;
+  background: #0b0e22;
 }
 ::-webkit-scrollbar-thumb {
-  background: #d5ac63;
+  background: #E85025;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #b88e44;
+  background: #D43F15;
 }
+

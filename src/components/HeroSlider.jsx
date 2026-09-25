@@ -72,18 +72,19 @@ const HeroSlider = ({ onOpenQuote }) => {
                     isActive ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'
                   }`}
                 >
-                  {slide.title.includes('LAKSHMI') || slide.title.includes('EXCLUSIVE') ? (
+                  {slide.title.includes('LAXMI') || slide.title.includes('LAKSHMI') || slide.title.includes('EXCLUSIVE') ? (
                     <>
                       Welcome To <br />
-                      <span className="text-gold">LAKSHMI MODULAR KITCHEN</span> & BEDROOM SETS
+                      <span className="text-brand-orange">LAXMI MODULAR KITCHENS</span> & INTERIORS
                     </>
                   ) : (
                     <>
                       Leading Service Provider Of <br />
-                      <span className="text-gold">Modular Kitchen Designing</span>
+                      <span className="text-brand-orange">Modular Kitchen Designing</span>
                     </>
                   )}
                 </h1>
+
 
                 {/* Subtitle / Description */}
                 <p

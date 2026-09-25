@@ -39,8 +39,9 @@ const FloatingActions = () => {
       {/* Call Button for Mobile */}
       <a
         href={`tel:${siteConfig.phone}`}
-        aria-label="Call Lakshmi Modular Kitchen"
+        aria-label="Call Laxmi Modular Kitchens"
         className="sm:hidden w-12 h-12 bg-dark-900 text-gold rounded-full shadow-2xl flex items-center justify-center border-2 border-gold transition-all duration-300 active:scale-95"
+
       >
         <Phone className="w-5 h-5" />
       </a>

@@ -53,16 +53,16 @@ const About = ({ onOpenQuote }) => {
               </div>
 
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold uppercase text-dark-900 tracking-tight mb-6">
-                About Lakshmi Modular Kitchen
+                About Laxmi Modular Kitchens & Interiors
               </h2>
 
-              <h3 className="text-base sm:text-lg font-bold text-gold mb-4 leading-snug">
-                We Have The Right Products to Fit Your Needs — Lakshmi Modular Kitchen
+              <h3 className="text-base sm:text-lg font-bold text-brand-orange mb-4 leading-snug">
+                We Have The Right Products to Fit Your Needs — Laxmi Modular Kitchens & Interiors
               </h3>
 
               <div className="space-y-4 text-sm sm:text-base text-gray-600 leading-relaxed">
                 <p>
-                  Established in the year <strong className="text-dark-900 font-semibold">2008</strong> at Mumbai, Maharashtra, we <strong>Lakshmi Modular Kitchen</strong> are a renowned Trader, Manufacturer, and Supplier of premium quality Kitchen Trolleys, Wall Cabinets, Acrylic Shutters, Island Counters, and contemporary Bedroom Sets.
+                  Established in the year <strong className="text-dark-900 font-semibold">2008</strong> at Mumbai, Maharashtra, we <strong>Laxmi Modular Kitchens & Interiors</strong> are a renowned Trader, Manufacturer, and Supplier of premium quality Kitchen Trolleys, Wall Cabinets, Acrylic Shutters, Island Counters, and contemporary Bedroom Sets.
                 </p>
                 <p>
                   In their development process, we assure that only top-notch basic materials are used by our skilled professionals along with ultra-modern machinery, computerized edge-banders, and high-precision CNC routers. Besides, we examine each module on rigorous parameters before final dispatch and on-site assembly at our customers' destination.
@@ -87,7 +87,7 @@ const About = ({ onOpenQuote }) => {
               <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white bg-dark-900">
                 <img
                   src="/images/about/mission.jpg"
-                  alt="Lakshmi Modular Kitchen Workshop"
+                  alt="Laxmi Modular Kitchens Workshop"
                   className="w-full h-80 sm:h-[450px] object-cover hover:scale-105 transition-transform duration-700"
                   onError={(e) => {
                     e.target.src = '/images/slides/2.jpg';
@@ -114,9 +114,10 @@ const About = ({ onOpenQuote }) => {
       <section className="py-20 bg-light-100 border-y border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionTitle
-            subtitle="The Lakshmi Advantage"
-            title="Why Choose Lakshmi Modular Kitchen"
+            subtitle="The Laxmi Advantage"
+            title="Why Choose Laxmi Modular Kitchens"
           />
+
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
             {whyChooseUs.map((item) => {

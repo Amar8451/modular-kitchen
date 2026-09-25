@@ -1,6 +1,6 @@
 export const siteConfig = {
-  name: "Lakshmi Modular Kitchen",
-  shortName: "Lakshmi Modular Kitchen",
+  name: "Laxmi Modular Kitchens & Interiors",
+  shortName: "Laxmi Modular Kitchens",
   tagline: "Quality is what we pursue, We know what we do",
   phone: "8929964243",
   phoneDisplay: "+91 8929964243",
@@ -14,7 +14,7 @@ export const siteConfig = {
     facebook: "https://facebook.com",
     instagram: "https://instagram.com",
     twitter: "https://twitter.com",
-    whatsapp: "https://wa.me/918929964243?text=Hi%2C%20I%20am%20interested%20in%20Lakshmi%20Modular%20Kitchen"
+    whatsapp: "https://wa.me/918929964243?text=Hi%2C%20I%20am%20interested%20in%20Laxmi%20Modular%20Kitchens%20%26%20Interiors"
   }
 };
 
@@ -23,8 +23,8 @@ export const heroSlides = [
     id: 1,
     image: "/images/slides/1.jpg",
     subtitle: "Welcome To",
-    title: "LAKSHMI MODULAR KITCHEN & BEDROOM SETS",
-    description: "Established in the year 2008 at Mumbai. Leading manufacturer and supplier of customized luxury modular kitchens, stylish bedroom wardrobes, and bespoke living spaces by Lakshmi Modular Kitchen.",
+    title: "LAXMI MODULAR KITCHENS & INTERIORS",
+    description: "Established in 2008 at Mumbai. Leading manufacturer and designer of customized luxury modular kitchens, stylish bedroom wardrobes, and bespoke living spaces by Laxmi Modular Kitchens & Interiors.",
     ctaPrimary: { text: "About Us", link: "/about" },
     ctaSecondary: { text: "Our Services", link: "/services" }
   },

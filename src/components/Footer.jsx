@@ -6,7 +6,7 @@ import Logo from './Logo';
 
 const Footer = ({ onOpenQuote }) => {
   return (
-    <footer className="bg-dark-900 text-gray-400 pt-16 pb-8 border-t-4 border-gold">
+    <footer className="bg-gradient-to-b from-navy-900 via-navy-950 to-[#080a18] text-gray-400 pt-16 pb-8 border-t-4 border-brand-orange">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/10">
           
@@ -16,10 +16,10 @@ const Footer = ({ onOpenQuote }) => {
               <Logo variant="light" size="md" />
             </Link>
             <p className="text-xs leading-relaxed text-gray-300">
-              Established in 2008 at Mumbai, <strong className="text-white">Lakshmi Modular Kitchen</strong> is a leading trader, manufacturer, and supplier of premium quality kitchen trolleys, wall cabinets, acrylic modules, and bedroom furniture.
+              Established in 2008 at Mumbai, <strong className="text-white">Laxmi Modular Kitchens & Interiors</strong> is a leading trader, manufacturer, and supplier of premium quality kitchen trolleys, wall cabinets, acrylic modules, and bedroom furniture.
             </p>
             <div className="pt-2 flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-gold/15 flex items-center justify-center text-gold">
+              <div className="w-10 h-10 rounded-full bg-brand-orange/15 flex items-center justify-center text-brand-orange">
                 <ShieldCheck className="w-5 h-5" />
               </div>
               <div className="text-xs">
@@ -128,7 +128,7 @@ const Footer = ({ onOpenQuote }) => {
 
         {/* Sub-Footer Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 gap-4">
-          <p>© {new Date().getFullYear()} Lakshmi Modular Kitchen. All Rights Reserved.</p>
+          <p>© {new Date().getFullYear()} Laxmi Modular Kitchens & Interiors. All Rights Reserved.</p>
           <div className="flex items-center gap-4">
             <span className="text-gray-400">Ulhasnagar • Mumbai • Thane • Navi Mumbai</span>
           </div>

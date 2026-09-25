@@ -96,9 +96,9 @@ const QuoteModal = ({ isOpen, onClose, preselectedService = null }) => {
             <X className="w-6 h-6" />
           </button>
           
-          <div className="flex items-center gap-2 text-gold text-xs font-bold uppercase tracking-wider mb-1">
+          <div className="flex items-center gap-2 text-brand-orange text-xs font-bold uppercase tracking-wider mb-1">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>Lakshmi Modular Kitchen</span>
+            <span>Laxmi Modular Kitchens & Interiors</span>
           </div>
           <h3 className="text-xl font-extrabold uppercase tracking-tight text-white">
             Request A Free 3D Design & Quote
