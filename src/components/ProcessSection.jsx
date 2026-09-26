@@ -104,12 +104,12 @@ const ProcessSection = ({ onOpenQuote }) => {
         </div>
 
         {/* Step Detail Card (Interactive Focus) */}
-        <div className="bg-gradient-to-br from-navy-950 via-[#101633] to-navy-900 text-white rounded-3xl p-8 sm:p-10 border border-white/10 shadow-2xl relative overflow-hidden">
+        <div className="bg-gradient-to-br from-navy-950 via-[#101633] to-navy-900 text-white rounded-3xl p-8 sm:p-10 border border-white/10 shadow-2xl relative overflow-hidden card-border-glow transition-all duration-300">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
             <div className="lg:col-span-8">
               <div className="flex items-center gap-3 mb-4">
-                <span className="text-3xl sm:text-4xl font-black text-brand-orange font-heading">
+                <span className="text-3xl sm:text-4xl font-black text-brand-orange font-heading badge-float">
                   {STEPS[activeStep].step}
                 </span>
                 <div>
@@ -129,7 +129,7 @@ const ProcessSection = ({ onOpenQuote }) => {
               {/* Highlights */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6">
                 {STEPS[activeStep].highlights.map((h, i) => (
-                  <div key={i} className="flex items-center gap-2 p-3 rounded-xl bg-white/5 border border-white/10 text-xs text-gray-200">
+                  <div key={i} className="flex items-center gap-2 p-3 rounded-xl bg-white/5 border border-white/10 text-xs text-gray-200 transition-all duration-300 hover:bg-white/10 hover:border-brand-orange/40 hover:-translate-y-0.5">
                     <CheckCircle2 className="w-4 h-4 text-brand-orange shrink-0" />
                     <span>{h}</span>
                   </div>

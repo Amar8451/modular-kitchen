@@ -100,13 +100,13 @@ const KitchenCostCalculator = ({ onOpenQuote }) => {
                     key={layout.id}
                     type="button"
                     onClick={() => setSelectedLayout(layout)}
-                    className={`p-3 rounded-xl border text-center transition-all flex flex-col items-center gap-1.5 ${
+                    className={`p-3 rounded-xl border text-center transition-all duration-300 flex flex-col items-center gap-1.5 cursor-pointer hover:-translate-y-1 ${
                       selectedLayout.id === layout.id
-                        ? 'bg-brand-orange text-white border-brand-orange shadow-lg shadow-brand-orange/30 scale-102'
-                        : 'bg-white/5 text-gray-300 border-white/10 hover:border-white/20 hover:bg-white/10'
+                        ? 'bg-brand-orange text-white border-brand-orange shadow-lg shadow-brand-orange/30 scale-102 ring-2 ring-brand-orange/40'
+                        : 'bg-white/5 text-gray-300 border-white/10 hover:border-brand-orange/40 hover:bg-white/10'
                     }`}
                   >
-                    <span className="text-2xl">{layout.icon}</span>
+                    <span className="text-2xl transition-transform duration-300 group-hover:scale-110">{layout.icon}</span>
                     <span className="text-xs font-bold leading-tight">{layout.name}</span>
                   </button>
                 ))}
@@ -127,10 +127,10 @@ const KitchenCostCalculator = ({ onOpenQuote }) => {
                     key={size.id}
                     type="button"
                     onClick={() => setSelectedSize(size)}
-                    className={`p-4 rounded-xl border text-left transition-all ${
+                    className={`p-4 rounded-xl border text-left transition-all duration-300 cursor-pointer hover:-translate-y-1 ${
                       selectedSize.id === size.id
-                        ? 'bg-brand-orange text-white border-brand-orange shadow-lg shadow-brand-orange/25'
-                        : 'bg-white/5 text-gray-300 border-white/10 hover:bg-white/10 hover:border-white/20'
+                        ? 'bg-brand-orange text-white border-brand-orange shadow-lg shadow-brand-orange/25 ring-2 ring-brand-orange/40'
+                        : 'bg-white/5 text-gray-300 border-white/10 hover:bg-white/10 hover:border-brand-orange/40'
                     }`}
                   >
                     <div className="flex items-center justify-between mb-1">
@@ -157,10 +157,10 @@ const KitchenCostCalculator = ({ onOpenQuote }) => {
                     key={finish.id}
                     type="button"
                     onClick={() => setSelectedFinish(finish)}
-                    className={`p-3.5 rounded-xl border text-left transition-all ${
+                    className={`p-3.5 rounded-xl border text-left transition-all duration-300 cursor-pointer hover:-translate-y-1 ${
                       selectedFinish.id === finish.id
-                        ? 'bg-brand-orange text-white border-brand-orange shadow-lg shadow-brand-orange/25'
-                        : 'bg-white/5 text-gray-300 border-white/10 hover:bg-white/10'
+                        ? 'bg-brand-orange text-white border-brand-orange shadow-lg shadow-brand-orange/25 ring-2 ring-brand-orange/40'
+                        : 'bg-white/5 text-gray-300 border-white/10 hover:bg-white/10 hover:border-brand-orange/40'
                     }`}
                   >
                     <div className="font-bold text-xs mb-0.5">{finish.name}</div>
@@ -183,10 +183,10 @@ const KitchenCostCalculator = ({ onOpenQuote }) => {
                     key={hw.id}
                     type="button"
                     onClick={() => setSelectedHardware(hw)}
-                    className={`p-3 rounded-xl border text-center transition-all ${
+                    className={`p-3 rounded-xl border text-center transition-all duration-300 cursor-pointer hover:-translate-y-1 ${
                       selectedHardware.id === hw.id
-                        ? 'bg-brand-orange text-white border-brand-orange shadow-md'
-                        : 'bg-white/5 text-gray-300 border-white/10 hover:bg-white/10'
+                        ? 'bg-brand-orange text-white border-brand-orange shadow-md ring-2 ring-brand-orange/40'
+                        : 'bg-white/5 text-gray-300 border-white/10 hover:bg-white/10 hover:border-brand-orange/40'
                     }`}
                   >
                     <span className="text-xs font-bold">{hw.name}</span>
@@ -199,7 +199,7 @@ const KitchenCostCalculator = ({ onOpenQuote }) => {
 
           {/* Result Card Column (4 cols) */}
           <div className="lg:col-span-4 sticky top-28 space-y-6">
-            <div className="bg-gradient-to-b from-[#182046] to-navy-950 p-6 sm:p-7 rounded-3xl border-2 border-brand-orange/40 shadow-2xl relative overflow-hidden">
+            <div className="bg-gradient-to-b from-[#182046] to-navy-950 p-6 sm:p-7 rounded-3xl border-2 border-brand-orange/40 shadow-2xl relative overflow-hidden card-border-glow transition-all duration-300">
               
               <div className="flex items-center gap-2 text-brand-orange text-xs font-extrabold uppercase tracking-widest mb-3">
                 <Sparkles className="w-4 h-4" />

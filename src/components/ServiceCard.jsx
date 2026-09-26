@@ -4,9 +4,9 @@ import Button from './Button';
 
 const ServiceCard = ({ service, onEnquire, onViewDetails }) => {
   return (
-    <div className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 border border-gray-100 flex flex-col group hover:-translate-y-1">
-      {/* Image container with hover zoom */}
-      <div className="relative h-56 overflow-hidden bg-gray-100">
+    <div className="bg-white rounded-xl overflow-hidden shadow-md card-animated card-border-glow border border-gray-100 flex flex-col group cursor-pointer">
+      {/* Image container with hover zoom & light sheen sweep */}
+      <div className="relative h-56 overflow-hidden bg-gray-100 card-shimmer">
         <img
           src={service.image}
           alt={service.title}
@@ -16,15 +16,15 @@ const ServiceCard = ({ service, onEnquire, onViewDetails }) => {
             e.target.src = '/images/services/1.jpg';
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-dark-900/80 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity" />
+        <div className="absolute inset-0 bg-gradient-to-t from-dark-900/85 via-dark-900/20 to-transparent opacity-80 group-hover:opacity-95 transition-opacity duration-300" />
         
         {/* Category Tag */}
-        <span className="absolute top-3 left-3 bg-dark-900/90 backdrop-blur-sm text-gold text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded border border-gold/30">
+        <span className="absolute top-3 left-3 bg-dark-900/90 backdrop-blur-sm text-gold text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded border border-gold/30 badge-float z-10">
           {service.category === 'kitchen' ? 'Modular Kitchen' : 'Bedroom Furniture'}
         </span>
 
         {/* Floating Title on Image */}
-        <div className="absolute bottom-3 left-4 right-4">
+        <div className="absolute bottom-3 left-4 right-4 z-10">
           <h3 className="text-white font-extrabold text-base md:text-lg leading-snug drop-shadow-md">
             {service.title}
           </h3>

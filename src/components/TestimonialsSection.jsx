@@ -54,7 +54,7 @@ const TestimonialsSection = () => {
         <div className="max-w-4xl mx-auto relative">
           
           {/* Main Card Container */}
-          <div className="relative rounded-3xl bg-gradient-to-br from-navy-950 via-navy-900 to-[#0e1431] text-white p-8 sm:p-12 shadow-2xl border border-white/10 overflow-hidden">
+          <div className="relative rounded-3xl bg-gradient-to-br from-navy-950 via-navy-900 to-[#0e1431] text-white p-8 sm:p-12 shadow-2xl border border-white/10 overflow-hidden card-border-glow transition-all duration-300">
             
             {/* Background Decorative Quote Watermark */}
             <div className="absolute -top-6 -right-6 text-white/5 pointer-events-none select-none">
@@ -65,11 +65,11 @@ const TestimonialsSection = () => {
               
               {/* Reviewer Avatar & Location */}
               <div className="shrink-0 flex flex-col items-center">
-                <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden border-4 border-brand-orange shadow-xl bg-navy-800">
+                <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden border-4 border-brand-orange shadow-xl bg-navy-800 transition-transform duration-500 hover:scale-105 group">
                   <img
                     src={activeReview.avatar}
                     alt={activeReview.name}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                     onError={(e) => {
                       e.target.src = '/images/client/client1.png';
                     }}

@@ -59,3 +59,109 @@
   background: #D43F15;
 }
 
+/* ============================================================
+   CARD ANIMATIONS & INTERACTIVE MICRO-INTERACTIONS
+   ============================================================ */
+
+/* 1. Smooth 3D Hover Lift & Ambient Glow */
+.card-animated {
+  position: relative;
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
+              box-shadow 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
+              border-color 0.3s ease;
+  will-change: transform, box-shadow;
+}
+
+.card-animated:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 24px 45px -12px rgba(232, 80, 37, 0.2), 0 8px 20px -6px rgba(11, 14, 34, 0.08);
+}
+
+/* 2. Radiant Light Sheen (Shimmer) Sweep on Hover */
+.card-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-shimmer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0) 20%,
+    rgba(255, 255, 255, 0.4) 50%,
+    transparent 100%
+  );
+  transform: skewX(-25deg);
+  transition: left 0.75s cubic-bezier(0.2, 0.8, 0.2, 1);
+  pointer-events: none;
+  z-index: 20;
+}
+
+.group:hover .card-shimmer::before,
+.card-shimmer:hover::before {
+  left: 150%;
+}
+
+/* 3. Top Gradient Accent on Hover */
+.card-border-glow {
+  position: relative;
+}
+
+.card-border-glow::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #E85025, #F59E0B, #E85025);
+  background-size: 200% 100%;
+  opacity: 0;
+  transition: opacity 0.35s ease, background-position 1s ease;
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+  pointer-events: none;
+}
+
+.card-border-glow:hover::after,
+.group:hover .card-border-glow::after {
+  opacity: 1;
+  background-position: 100% 0;
+}
+
+/* 4. Subtle Floating Badge */
+@keyframes badgeFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+.badge-float {
+  animation: badgeFloat 3s ease-in-out infinite;
+}
+
+/* 5. Smooth Staggered Card Entrance */
+@keyframes cardFadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-card-in {
+  animation: cardFadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+

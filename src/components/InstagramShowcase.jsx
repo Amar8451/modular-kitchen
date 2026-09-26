@@ -62,27 +62,28 @@ const InstagramShowcase = ({ onOpenQuote }) => {
 
         {/* 6-Card Instagram Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {instagramPosts.map((post) => (
+          {instagramPosts.map((post, idx) => (
             <div
               key={post.id}
-              className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-gray-200/80 transition-all duration-300 flex flex-col group hover:-translate-y-1"
+              style={{ animationDelay: `${idx * 80}ms` }}
+              className="bg-white rounded-2xl overflow-hidden shadow-sm card-animated card-border-glow border border-gray-200/80 flex flex-col group cursor-pointer"
             >
-              {/* Image Preview with Instagram Overlay */}
-              <div className="relative aspect-[4/4.5] overflow-hidden bg-navy-950">
+              {/* Image Preview with Instagram Overlay & Shimmer Sweep */}
+              <div className="relative aspect-[4/4.5] overflow-hidden bg-navy-950 card-shimmer">
                 <img
                   src={post.image}
                   alt={post.caption}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-950/85 via-transparent to-transparent opacity-80 group-hover:opacity-95 transition-opacity duration-300" />
                 
                 {/* Category Pill Tag */}
-                <div className="absolute top-3 left-3 bg-navy-950/80 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-bold text-white uppercase tracking-wider border border-white/10">
+                <div className="absolute top-3 left-3 bg-navy-950/85 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-bold text-white uppercase tracking-wider border border-white/15 badge-float z-10">
                   {post.tag}
                 </div>
 
-                {/* Instagram Icon Badge */}
-                <div className="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white border border-white/20">
+                {/* Instagram Icon Badge with Micro-Rotation */}
+                <div className="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white border border-white/20 group-hover:rotate-12 group-hover:scale-110 group-hover:bg-gradient-to-tr group-hover:from-purple-600 group-hover:to-pink-500 transition-all duration-300 z-10">
                   <InstagramIcon className="w-4 h-4" />
                 </div>
 

@@ -125,13 +125,14 @@ const SolutionsSection = ({ onOpenQuote, onViewDetails }) => {
 
         {/* Solutions Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredSolutions.map((item) => (
+          {filteredSolutions.map((item, idx) => (
             <div
               key={item.id}
-              className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col group hover:-translate-y-1"
+              style={{ animationDelay: `${idx * 100}ms` }}
+              className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-md card-animated card-border-glow flex flex-col group cursor-pointer"
             >
-              {/* Image Preview with Hover Zoom */}
-              <div className="relative h-60 overflow-hidden bg-gray-900">
+              {/* Image Preview with Hover Zoom & Light Sheen Sweep */}
+              <div className="relative h-60 overflow-hidden bg-gray-900 card-shimmer">
                 <img
                   src={item.image}
                   alt={item.title}
@@ -141,15 +142,15 @@ const SolutionsSection = ({ onOpenQuote, onViewDetails }) => {
                     e.target.src = '/images/slides/1.jpg';
                   }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy-950/85 via-navy-950/20 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-950/85 via-navy-950/20 to-transparent transition-opacity duration-300 group-hover:opacity-90" />
                 
                 {/* Floating Tag */}
-                <span className="absolute top-3 left-3 bg-brand-orange text-white text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded shadow-md">
+                <span className="absolute top-3 left-3 bg-brand-orange text-white text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded shadow-md badge-float z-10">
                   {item.tag}
                 </span>
 
                 {/* Best For Chip */}
-                <span className="absolute top-3 right-3 bg-navy-950/80 backdrop-blur-md text-gray-200 text-[10px] font-semibold px-2 py-0.5 rounded border border-white/20">
+                <span className="absolute top-3 right-3 bg-navy-950/80 backdrop-blur-md text-gray-200 text-[10px] font-semibold px-2 py-0.5 rounded border border-white/20 z-10 group-hover:border-brand-orange/40 transition-colors">
                   {item.bestFor}
                 </span>
 
