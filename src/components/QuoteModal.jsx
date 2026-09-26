@@ -18,10 +18,19 @@ const QuoteModal = ({ isOpen, onClose, preselectedService = null }) => {
 
   useEffect(() => {
     if (preselectedService) {
-      setFormData((prev) => ({
-        ...prev,
-        service: preselectedService.title || prev.service
-      }));
+      if (preselectedService.title) {
+        setFormData((prev) => ({
+          ...prev,
+          service: preselectedService.title
+        }));
+      } else if (preselectedService.layout) {
+        const msg = `Configuration: ${preselectedService.layout} | Size: ${preselectedService.size || 'Standard'} | Finish: ${preselectedService.finish || 'Acrylic'} | Estimated: ${preselectedService.estimateRange || ''}`;
+        setFormData((prev) => ({
+          ...prev,
+          service: preselectedService.layout,
+          message: msg
+        }));
+      }
     }
   }, [preselectedService]);
 
@@ -81,13 +90,13 @@ const QuoteModal = ({ isOpen, onClose, preselectedService = null }) => {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-dark-950/80 backdrop-blur-sm animate-fadeIn">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-navy-950/80 backdrop-blur-md animate-fadeIn">
       <div
-        className="relative w-full max-w-lg bg-white rounded-2xl shadow-2xl border-2 border-gold/30 overflow-hidden transform transition-all"
+        className="relative w-full max-w-lg bg-white rounded-3xl shadow-2xl border border-white/20 overflow-hidden transform transition-all"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header banner */}
-        <div className="bg-dark-900 text-white p-6 relative border-b border-gold/40">
+        <div className="bg-gradient-to-r from-navy-950 via-navy-900 to-navy-950 text-white p-6 sm:p-7 relative border-b border-brand-orange/40">
           <button
             onClick={onClose}
             className="absolute top-5 right-5 text-gray-400 hover:text-white transition-colors p-1"

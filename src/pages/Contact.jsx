@@ -7,7 +7,9 @@ import {
   Send,
   CheckCircle,
   MessageSquare,
-  Sparkles
+  Sparkles,
+  Truck,
+  Navigation
 } from 'lucide-react';
 import PageBanner from '../components/PageBanner';
 import SectionTitle from '../components/SectionTitle';
@@ -96,12 +98,19 @@ const Contact = () => {
               
               {/* Corporate Office Card */}
               <div className="bg-white p-8 rounded-2xl shadow-md border-l-4 border-gold">
-                <div className="flex items-center gap-2 text-gold text-xs font-bold uppercase tracking-wider mb-2">
-                  <Sparkles className="w-3.5 h-3.5" />
-                  <span>Main Showroom & Workshop</span>
+                <div className="flex items-center justify-between mb-2">
+                  <div className="flex items-center gap-2 text-gold text-xs font-bold uppercase tracking-wider">
+                    <Sparkles className="w-3.5 h-3.5" />
+                    <span>Main Showroom & Studio</span>
+                  </div>
+                  <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">
+                    <CheckCircle className="w-3 h-3 text-emerald-600" />
+                    <span>Delivery Available</span>
+                  </span>
                 </div>
+
                 <h3 className="text-xl font-extrabold uppercase text-dark-900 mb-6">
-                  Corporate Office
+                  Ulhasnagar Showroom
                 </h3>
 
                 <ul className="space-y-6 text-sm">
@@ -110,9 +119,34 @@ const Contact = () => {
                       <MapPin className="w-5 h-5" />
                     </div>
                     <div>
-                      <span className="block text-xs font-bold uppercase text-gray-500 tracking-wider">Address</span>
-                      <p className="text-dark-900 font-medium leading-relaxed mt-1">
+                      <span className="block text-xs font-bold uppercase text-gray-500 tracking-wider">Showroom Address</span>
+                      <p className="text-dark-900 font-semibold leading-relaxed mt-1">
                         {siteConfig.address}
+                      </p>
+                      <div className="mt-2 flex flex-wrap gap-2 text-xs">
+                        <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-amber-50 text-amber-800 font-semibold border border-amber-200">
+                          <strong>Located in:</strong> {siteConfig.locatedIn}
+                        </span>
+                        <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-sky-50 text-sky-800 font-mono text-[11px] border border-sky-200">
+                          <Navigation className="w-3 h-3" />
+                          <span>{siteConfig.plusCode}</span>
+                        </span>
+                      </div>
+                    </div>
+                  </li>
+
+                  <li className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 mt-0.5">
+                      <Truck className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <span className="block text-xs font-bold uppercase text-gray-500 tracking-wider">Service & Logistics</span>
+                      <p className="text-dark-900 font-bold text-sm mt-0.5 flex items-center gap-1 text-emerald-700">
+                        <CheckCircle className="w-4 h-4 text-emerald-600" />
+                        <span>✓ Direct Home Delivery & Complete Installation</span>
+                      </p>
+                      <p className="text-xs text-gray-500 mt-1">
+                        Serving Ulhasnagar, Kalyan, Dombivli, Thane, Navi Mumbai, Mumbai & Pune.
                       </p>
                     </div>
                   </li>
@@ -123,10 +157,29 @@ const Contact = () => {
                     </div>
                     <div>
                       <span className="block text-xs font-bold uppercase text-gray-500 tracking-wider">Direct Call / WhatsApp</span>
-                      <p className="text-dark-900 font-bold text-base mt-1">
-                        <a href={`tel:${siteConfig.phone}`} className="hover:text-gold transition-colors">
-                          +91 {siteConfig.phone}
+                      <p className="text-dark-900 font-extrabold text-lg mt-1 tracking-wide">
+                        <a href={`tel:${siteConfig.phone}`} className="hover:text-gold transition-colors font-mono">
+                          {siteConfig.phoneDisplay}
                         </a>
+                      </p>
+                      <p className="text-xs text-gray-500 mt-0.5">
+                        Alternate: <a href={`tel:${siteConfig.altPhone}`} className="hover:text-gold font-medium">{siteConfig.altPhoneDisplay}</a>
+                      </p>
+                    </div>
+                  </li>
+
+                  <li className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-full bg-gold/15 text-gold flex items-center justify-center shrink-0 mt-0.5">
+                      <Clock className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <span className="block text-xs font-bold uppercase text-gray-500 tracking-wider">Store Operating Hours</span>
+                      <p className="text-emerald-700 font-bold text-sm mt-1 flex items-center gap-1.5">
+                        <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                        <span>{siteConfig.workingHoursShort}</span>
+                      </p>
+                      <p className="text-xs text-gray-600 mt-0.5">
+                        {siteConfig.workingHours}
                       </p>
                     </div>
                   </li>
@@ -144,22 +197,10 @@ const Contact = () => {
                       </p>
                     </div>
                   </li>
-
-                  <li className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-full bg-gold/15 text-gold flex items-center justify-center shrink-0 mt-0.5">
-                      <Clock className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <span className="block text-xs font-bold uppercase text-gray-500 tracking-wider">Business Hours</span>
-                      <p className="text-dark-900 font-medium mt-1">
-                        {siteConfig.workingHours}
-                      </p>
-                    </div>
-                  </li>
                 </ul>
 
-                {/* Direct WhatsApp Callout */}
-                <div className="mt-8 pt-6 border-t border-gray-100">
+                {/* Direct WhatsApp & Google Profile Callouts */}
+                <div className="mt-8 pt-6 border-t border-gray-100 space-y-3">
                   <a
                     href={siteConfig.socials.whatsapp}
                     target="_blank"
@@ -169,6 +210,37 @@ const Contact = () => {
                     <MessageSquare className="w-4 h-4 fill-white" />
                     <span>Quick Chat on WhatsApp</span>
                   </a>
+
+                  <a
+                    href={siteConfig.mapLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full flex items-center justify-center gap-2 py-3 bg-white hover:bg-gray-50 text-dark-900 border border-gray-300 rounded-xl font-bold text-xs uppercase tracking-wider shadow-sm transition-all duration-200"
+                  >
+                    <MapPin className="w-4 h-4 text-brand-orange" />
+                    <span>View on Google Maps / Reviews</span>
+                  </a>
+                </div>
+              </div>
+
+              {/* Founder Contact Badge */}
+              <div className="bg-gradient-to-br from-navy-950 to-navy-900 text-white p-6 rounded-2xl shadow-md border border-white/10 flex items-center gap-4">
+                <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-brand-orange shrink-0 bg-white/10">
+                  <img
+                    src="/images/client/n11-modified.png"
+                    alt="Founder Naresh Desai"
+                    className="w-full h-full object-cover"
+                    onError={(e) => { e.target.style.display = 'none'; }}
+                  />
+                </div>
+                <div>
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-brand-orange block">
+                    Studio Founder & Lead Designer
+                  </span>
+                  <h4 className="text-base font-extrabold text-white">Naresh Desai</h4>
+                  <p className="text-xs text-gray-300 mt-0.5">
+                    "We respect deadlines and ensure every kitchen is built with utmost precision and customer happiness."
+                  </p>
                 </div>
               </div>
 
@@ -313,24 +385,24 @@ const Contact = () => {
 
           {/* Interactive Google Map Embed */}
           <div className="mt-16 bg-white rounded-2xl overflow-hidden shadow-md border border-gray-200">
-            <div className="p-4 bg-dark-900 text-white flex items-center justify-between">
+            <div className="p-4 bg-dark-900 text-white flex flex-col sm:flex-row sm:items-center justify-between gap-3">
               <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider">
-                <MapPin className="w-4 h-4 text-gold" />
-                <span>Showroom Location Map: Furniture Bazar, Ulhasnagar, Maharashtra</span>
+                <MapPin className="w-4 h-4 text-brand-orange shrink-0" />
+                <span>Showroom Map: Furniture market, 1143, near Ritik hardware, Press Bazar, Ulhasnagar 421002</span>
               </div>
               <a
-                href="https://maps.google.com/?q=Furniture+Bazar+Ulhasnagar"
+                href={siteConfig.mapLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-xs text-gold hover:underline font-semibold"
+                className="text-xs text-brand-orange hover:underline font-semibold flex items-center gap-1 shrink-0"
               >
-                Open in Google Maps &rarr;
+                <span>Open in Google Maps / Reviews</span>
+                <span>&rarr;</span>
               </a>
             </div>
             <iframe
               title="Laxmi Modular Kitchens & Interiors Location Map"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3767.1235686001093!2d73.15174427503148!3d19.233405782006325!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be79427b58c5417%3A0xc3cf9c9889417cb3!2sFurniture%20Bazar%2C%20Ulhasnagar%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
-
+              src="https://maps.google.com/maps?q=Furniture+market+1143+near+Ritik+hardware+Press+Bazar+Ulhasnagar+Maharashtra+421002&t=&z=16&ie=UTF8&iwloc=&output=embed"
               width="100%"
               height="400"
               style={{ border: 0 }}

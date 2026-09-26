@@ -5,6 +5,8 @@ import PageBanner from '../components/PageBanner';
 import SectionTitle from '../components/SectionTitle';
 import ServiceCard from '../components/ServiceCard';
 import BrandPartners from '../components/BrandPartners';
+import KitchenCostCalculator from '../components/KitchenCostCalculator';
+import CallToAction from '../components/CallToAction';
 import Button from '../components/Button';
 import { servicesData } from '../data/siteData';
 
@@ -38,8 +40,10 @@ const Services = ({ onOpenQuote, onSelectService, onViewDetails }) => {
         ? item.category === 'kitchen'
         : filter === 'bedroom'
         ? item.category === 'bedroom'
-        : filter === 'navimumbai'
-        ? ['vashi', 'nerul', 'kharghar', 'kalamboli', 'cbd-belapur'].includes(item.id)
+        : filter === 'interior'
+        ? item.category === 'interior'
+        : filter === 'furniture'
+        ? item.category === 'furniture'
         : true;
 
     const matchesSearch =
@@ -54,7 +58,7 @@ const Services = ({ onOpenQuote, onSelectService, onViewDetails }) => {
       {/* Banner */}
       <PageBanner
         title="Our Services"
-        subtitle="Custom Modular Kitchens & Bedroom Sets"
+        subtitle="Modular Kitchens, Wardrobes & Complete Home Interiors"
         breadcrumb={[{ name: 'Services' }]}
       />
 
@@ -62,8 +66,8 @@ const Services = ({ onOpenQuote, onSelectService, onViewDetails }) => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <SectionTitle
-            subtitle="Expert Craftsmanship Across Mumbai & Thane"
-            title="Modular Kitchens & Furniture Solutions"
+            subtitle="Expert Craftsmanship Across Pune, Wagholi & Greater Maharashtra"
+            title="Modular Kitchens & Interior Solutions"
           />
 
           {/* Filter Bar & Search */}
@@ -74,8 +78,9 @@ const Services = ({ onOpenQuote, onSelectService, onViewDetails }) => {
               {[
                 { label: 'All Services', key: 'all' },
                 { label: 'Modular Kitchens', key: 'kitchen' },
-                { label: 'Bedroom Furniture', key: 'bedroom' },
-                { label: 'Navi Mumbai', key: 'navimumbai' }
+                { label: 'Complete Interiors', key: 'interior' },
+                { label: 'Wardrobes & Beds', key: 'bedroom' },
+                { label: 'Custom Furniture', key: 'furniture' }
               ].map((tab) => (
                 <button
                   key={tab.key}
@@ -83,7 +88,7 @@ const Services = ({ onOpenQuote, onSelectService, onViewDetails }) => {
                   onClick={() => setFilter(tab.key)}
                   className={`px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider transition-all duration-200 ${
                     filter === tab.key
-                      ? 'bg-gold text-white shadow-md'
+                      ? 'bg-brand-orange text-white shadow-md'
                       : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                   }`}
                 >
@@ -144,12 +149,12 @@ const Services = ({ onOpenQuote, onSelectService, onViewDetails }) => {
           )}
 
           {/* Consultation CTA Card */}
-          <div className="mt-16 bg-dark-900 rounded-2xl p-8 sm:p-12 text-white border-2 border-gold/40 flex flex-col md:flex-row items-center justify-between gap-8 shadow-2xl">
+          <div className="mt-16 bg-gradient-to-r from-navy-950 via-navy-900 to-navy-950 rounded-3xl p-8 sm:p-12 text-white border border-brand-orange/40 flex flex-col md:flex-row items-center justify-between gap-8 shadow-2xl">
             <div className="max-w-xl text-center md:text-left">
-              <span className="text-gold text-xs font-bold uppercase tracking-widest block mb-2">
+              <span className="text-brand-orange text-xs font-bold uppercase tracking-widest block mb-2">
                 Need a Custom Layout?
               </span>
-              <h3 className="text-2xl sm:text-3xl font-extrabold uppercase tracking-tight">
+              <h3 className="text-2xl sm:text-3xl font-extrabold uppercase tracking-tight text-white">
                 Can't find your exact location?
               </h3>
               <p className="text-xs sm:text-sm text-gray-300 mt-2 leading-relaxed">
@@ -164,9 +169,16 @@ const Services = ({ onOpenQuote, onSelectService, onViewDetails }) => {
         </div>
       </section>
 
+      {/* Interactive Kitchen Cost Estimator on Services Page */}
+      <KitchenCostCalculator onOpenQuote={onOpenQuote} />
+
       <BrandPartners />
+
+      {/* Modern High Conversion Call To Action */}
+      <CallToAction onOpenQuote={onOpenQuote} />
     </div>
   );
 };
 
 export default Services;
+

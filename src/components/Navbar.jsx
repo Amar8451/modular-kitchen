@@ -157,20 +157,20 @@ const Navbar = ({ onOpenQuote }) => {
           <div className="hidden lg:flex items-center gap-5">
             <a
               href={`tel:${siteConfig.phone}`}
-              className="flex items-center gap-2 text-dark-900 hover:text-gold transition-colors font-bold text-xs xl:text-sm group"
+              className="flex items-center gap-2.5 text-navy-900 hover:text-brand-orange transition-colors font-bold text-xs xl:text-sm group"
             >
-              <div className="w-8 h-8 rounded-full bg-gold/15 flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-white transition-colors">
-                <Phone className="w-3.5 h-3.5" />
+              <div className="w-9 h-9 rounded-xl bg-brand-orange/10 flex items-center justify-center text-brand-orange group-hover:bg-brand-orange group-hover:text-white transition-all shadow-sm">
+                <Phone className="w-4 h-4" />
               </div>
               <div className="text-left">
                 <span className="block text-[9px] text-gray-500 uppercase font-semibold leading-tight">Expert Call</span>
-                <span className="text-xs font-extrabold text-dark-900">{siteConfig.phone}</span>
+                <span className="text-xs font-black text-navy-950">{siteConfig.phone}</span>
               </div>
             </a>
 
             <button
               onClick={onOpenQuote}
-              className="thm-btn-gold text-xs py-2.5 px-5 shadow-sm hover:shadow-md transition-all cursor-pointer"
+              className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-brand-orange to-orange-600 hover:from-brand-navy hover:to-brand-navy text-white text-xs font-extrabold uppercase tracking-wider shadow-md hover:shadow-brand-orange/30 transition-all cursor-pointer active:scale-95"
             >
               Get Free Quote
             </button>
@@ -180,17 +180,17 @@ const Navbar = ({ onOpenQuote }) => {
           <div className="flex items-center gap-2 lg:hidden">
             <button
               onClick={onOpenQuote}
-              className="bg-gold hover:bg-gold-500 text-white text-[11px] font-bold uppercase tracking-wider py-1.5 px-3 rounded shadow"
+              className="bg-brand-orange hover:bg-orange-600 text-white text-[11px] font-bold uppercase tracking-wider py-1.5 px-3 rounded-lg shadow-sm"
             >
               Quote
             </button>
 
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2 text-dark-900 hover:text-gold transition-colors rounded-lg focus:outline-none"
+              className="p-2 text-navy-950 hover:text-brand-orange transition-colors rounded-lg focus:outline-none"
               aria-label="Toggle Navigation Menu"
             >
-              {isOpen ? <X className="w-6 h-6 text-gold" /> : <Menu className="w-6 h-6" />}
+              {isOpen ? <X className="w-6 h-6 text-brand-orange" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
         </div>

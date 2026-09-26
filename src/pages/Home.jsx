@@ -5,60 +5,86 @@ import {
   Mail,
   Phone,
   ArrowRight,
-  Compass,
-  Layers,
-  Wrench,
-  Shield,
+  ShieldCheck,
   Sparkles,
-  MapPin
+  MapPin,
+  Clock,
+  Layers,
+  Award
 } from 'lucide-react';
-import HeroSlider from '../components/HeroSlider';
+import ModernHero from '../components/ModernHero';
+import StatsSection from '../components/StatsSection';
+import SolutionsSection from '../components/SolutionsSection';
+import KitchenCostCalculator from '../components/KitchenCostCalculator';
+import ProcessSection from '../components/ProcessSection';
+import WhyChooseUsSection from '../components/WhyChooseUsSection';
+import TestimonialsSection from '../components/TestimonialsSection';
 import SectionTitle from '../components/SectionTitle';
 import ServiceCard from '../components/ServiceCard';
 import BrandPartners from '../components/BrandPartners';
+import InstagramShowcase from '../components/InstagramShowcase';
+import CallToAction from '../components/CallToAction';
 import Button from '../components/Button';
-import { siteConfig, servicesData, processSteps, regionalQuickLinks } from '../data/siteData';
+import { siteConfig, servicesData, regionalQuickLinks } from '../data/siteData';
 
 const Home = ({ onOpenQuote, onSelectService, onViewDetails }) => {
   return (
     <div className="space-y-0">
-      {/* 1. Hero Slider */}
-      <HeroSlider onOpenQuote={onOpenQuote} />
+      
+      {/* 1. Modern Interactive Hero with 3D Island & Particle Canvas */}
+      <ModernHero onOpenQuote={() => onOpenQuote()} />
 
-      {/* 2. Welcome / About Section */}
-      <section className="py-20 bg-white">
+      {/* 2. Animated Achievements / Stats Counter Section */}
+      <StatsSection />
+
+      {/* 3. Business Introduction: About The Firm */}
+      <section className="py-24 bg-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
             {/* Visual Images Column */}
             <div className="lg:col-span-5 relative">
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-navy-950">
                 <img
-                  src="/images/welcome/main-gallery.jpg"
-                  alt="Laxmi Modular Kitchens & Interiors"
-                  className="w-full h-80 sm:h-96 object-cover hover:scale-105 transition-transform duration-700"
-
+                  src="/images/client/imglaxmi__1_.jpeg"
+                  alt="Laxmi Modular Interior Studio"
+                  className="w-full h-80 sm:h-[420px] object-cover hover:scale-105 transition-transform duration-700"
                   onError={(e) => {
-                    e.target.src = '/images/slides/1.jpg';
+                    e.target.src = '/images/client/new1.jpeg';
                   }}
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-950/70 via-transparent to-transparent" />
+                
+                {/* Embedded Floating Trust Badge */}
+                <div className="absolute bottom-4 left-4 right-4 bg-navy-950/85 backdrop-blur-md p-4 rounded-2xl border border-white/10 flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-brand-orange flex items-center justify-center text-white shrink-0">
+                    <ShieldCheck className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <h4 className="text-white text-xs font-bold uppercase tracking-wider">10-Year Warranty Certified</h4>
+                    <p className="text-[11px] text-gray-300">Boiling Water Proof BWP Marine Plywood Core</p>
+                  </div>
+                </div>
               </div>
 
-              {/* Overlapping secondary image badge */}
-              <div className="hidden sm:block absolute -bottom-8 -right-6 w-48 h-48 rounded-xl overflow-hidden shadow-2xl border-4 border-white bg-dark-900">
+              {/* Overlapping secondary image badge - Founder */}
+              <div className="hidden sm:block absolute -bottom-8 -right-6 w-48 h-48 rounded-2xl overflow-hidden shadow-2xl border-4 border-white bg-navy-900">
                 <img
-                  src="/images/welcome/1.jpg"
-                  alt="Crafted Kitchen Cabinet"
+                  src="/images/client/n11-modified.png"
+                  alt="Founder Naresh Desai"
                   className="w-full h-full object-cover"
                   onError={(e) => {
-                    e.target.src = '/images/services/2.jpg';
+                    e.target.src = '/images/client/new1.jpeg';
                   }}
                 />
+                <div className="absolute bottom-2 left-2 right-2 bg-navy-950/90 text-center py-1 rounded text-[10px] text-brand-orange font-bold">
+                  Founder: Naresh Desai
+                </div>
               </div>
 
               {/* Experience badge */}
-              <div className="absolute -top-6 -left-6 bg-gold text-dark-950 font-extrabold px-6 py-4 rounded-xl shadow-xl flex items-center gap-3">
-                <span className="text-3xl font-black">16+</span>
+              <div className="absolute -top-6 -left-6 bg-gradient-to-br from-brand-orange to-orange-600 text-white font-extrabold px-6 py-4 rounded-2xl shadow-xl flex items-center gap-3">
+                <span className="text-3xl font-black font-heading">12+</span>
                 <span className="text-xs uppercase tracking-wider font-bold leading-tight">
                   Years Of <br />Excellence
                 </span>
@@ -70,51 +96,51 @@ const Home = ({ onOpenQuote, onSelectService, onViewDetails }) => {
               <div className="flex items-center gap-2 mb-3">
                 <span className="w-8 h-[2px] bg-brand-orange inline-block"></span>
                 <span className="text-brand-orange font-bold text-xs uppercase tracking-widest">
-                  Welcome to Laxmi Modular Kitchens & Interiors
+                  Welcome to Laxmi Modular Interior Studio
                 </span>
               </div>
 
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-navy-950 uppercase tracking-tight mb-4">
-                Established In The Year 2008 At Mumbai
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-navy-950 uppercase tracking-tight mb-4 font-heading">
+                Where Innovation Meets Elegant Interiors ✨
               </h2>
 
               <p className="text-gray-600 text-sm sm:text-base leading-relaxed mb-6">
-                We <strong className="text-navy-900 font-semibold">Laxmi Modular Kitchens & Interiors</strong> are a leading Trader and Supplier of premium quality Kitchen Trolleys, Wall Cabinets, Acrylic Modules, and Bedroom Furniture. In our manufacturing and design process, we assure that only top-notch raw material is used along with ultra-modern machinery and precision tools.
+                Led by Founder <strong className="text-navy-900 font-semibold">{siteConfig.founder}</strong>, we at <strong className="text-navy-900 font-semibold">{siteConfig.name}</strong> are a premier studio crafting customized luxury modular kitchens, stainless steel trolleys, acrylic modules, and bespoke bedroom furniture. With our flagship showroom in Ulhasnagar (Furniture Market, Press Bazar) and manufacturing facilities in Pune, we deliver directly to your doorstep with zero dealer markups, laser precision, and certified marine-grade waterproof materials.
               </p>
 
               {/* Feature list */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
                 {[
                   "100% Boiling Water Proof (BWP) Plywood",
-                  "German Soft-Close Tandem Hardware",
-                  "Free 3D Design Layout & Measurements",
-                  "10-Year Comprehensive Warranty",
-                  "Customized Storage & Ergonomics",
+                  "German Soft-Close Tandem Hardware (Blum/Hettich)",
+                  "Free 3D Photorealistic Design & Measurements",
+                  "10-Year Written Comprehensive Warranty",
+                  "Ergonomic Magic Corners & Tall Pantries",
                   "Direct Factory Prices with No Middlemen"
                 ].map((item, idx) => (
-                  <div key={idx} className="flex items-center gap-2.5 text-xs sm:text-sm text-dark-800 font-medium">
-                    <CheckCircle2 className="w-4 h-4 text-gold shrink-0" />
+                  <div key={idx} className="flex items-center gap-2.5 text-xs sm:text-sm text-navy-900 font-medium">
+                    <CheckCircle2 className="w-4 h-4 text-brand-orange shrink-0" />
                     <span>{item}</span>
                   </div>
                 ))}
               </div>
 
               {/* Request Quote Card & CTA */}
-              <div className="p-5 bg-gold/10 border-l-4 border-gold rounded-r-xl flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div className="p-5 bg-brand-orange/5 border-l-4 border-brand-orange rounded-r-2xl flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <div>
                   <span className="text-xs uppercase font-bold text-gray-500 tracking-wider">
-                    Direct Email Support
+                    Direct Consultation With Naresh Desai
                   </span>
-                  <p className="text-sm sm:text-base font-bold text-dark-900 flex items-center gap-2 mt-0.5">
-                    <Mail className="w-4 h-4 text-gold" />
-                    <a href={`mailto:${siteConfig.email}`} className="hover:text-gold transition-colors">
+                  <p className="text-sm sm:text-base font-bold text-navy-950 flex items-center gap-2 mt-0.5">
+                    <Mail className="w-4 h-4 text-brand-orange" />
+                    <a href={`mailto:${siteConfig.email}`} className="hover:text-brand-orange transition-colors">
                       {siteConfig.email}
                     </a>
                   </p>
                 </div>
 
-                <Button onClick={onOpenQuote} variant="gold" size="sm">
-                  Request Quote
+                <Button onClick={() => onOpenQuote()} variant="gold" size="sm">
+                  Request Free Quote
                 </Button>
               </div>
 
@@ -123,12 +149,18 @@ const Home = ({ onOpenQuote, onSelectService, onViewDetails }) => {
         </div>
       </section>
 
-      {/* 3. Services Section */}
-      <section className="py-20 bg-light-100">
+      {/* 4. Interactive Solutions & Layouts Explorer */}
+      <SolutionsSection onOpenQuote={onOpenQuote} onViewDetails={onViewDetails} />
+
+      {/* 5. Interactive Kitchen Cost Estimator / Configurator */}
+      <KitchenCostCalculator onOpenQuote={onOpenQuote} />
+
+      {/* 6. Core Services Section */}
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionTitle
-            subtitle="What We Offer"
-            title="Services We Do"
+            subtitle="Showroom Specializations"
+            title="Our Premier Services & Locations"
           />
 
           <p className="max-w-2xl mx-auto text-center text-sm text-gray-600 -mt-6 mb-12">
@@ -156,121 +188,52 @@ const Home = ({ onOpenQuote, onSelectService, onViewDetails }) => {
         </div>
       </section>
 
-      {/* 4. Our Working Process Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionTitle
-            subtitle="How We Work"
-            title="Our Working Process"
-          />
+      {/* 7. Working Process Section (Interactive 4 Steps) */}
+      <ProcessSection onOpenQuote={() => onOpenQuote()} />
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative mt-12">
-            {/* Step 1 */}
-            <div className="bg-light-100 p-8 rounded-2xl border-2 border-transparent hover:border-gold transition-all duration-300 relative group flex flex-col items-center text-center">
-              <div className="w-16 h-16 rounded-full bg-gold text-dark-900 font-extrabold text-2xl flex items-center justify-center shadow-lg mb-6 group-hover:scale-110 transition-transform">
-                01
-              </div>
-              <h3 className="text-xl font-extrabold uppercase text-dark-900 mb-3">
-                Search Design
-              </h3>
-              <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
-                Explore our catalog of parallel, L-shaped, U-shaped, and island layouts. Schedule a free site visit for laser-accurate measurements.
-              </p>
-            </div>
+      {/* 8. Why Choose Us Section */}
+      <WhyChooseUsSection onOpenQuote={() => onOpenQuote()} />
 
-            {/* Step 2 */}
-            <div className="bg-light-100 p-8 rounded-2xl border-2 border-transparent hover:border-gold transition-all duration-300 relative group flex flex-col items-center text-center">
-              <div className="w-16 h-16 rounded-full bg-dark-900 text-gold font-extrabold text-2xl flex items-center justify-center shadow-lg mb-6 group-hover:scale-110 transition-transform">
-                02
-              </div>
-              <h3 className="text-xl font-extrabold uppercase text-dark-900 mb-3">
-                Book Cover Design
-              </h3>
-              <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
-                Review your personalized 3D design render. Choose high-gloss acrylic, PU, or laminate finishes and precision fittings from Hettich or Blum.
-              </p>
-            </div>
+      {/* 9. Verified Customer Testimonials Carousel */}
+      <TestimonialsSection />
 
-            {/* Step 3 */}
-            <div className="bg-light-100 p-8 rounded-2xl border-2 border-transparent hover:border-gold transition-all duration-300 relative group flex flex-col items-center text-center">
-              <div className="w-16 h-16 rounded-full bg-gold text-dark-900 font-extrabold text-2xl flex items-center justify-center shadow-lg mb-6 group-hover:scale-110 transition-transform">
-                03
-              </div>
-              <h3 className="text-xl font-extrabold uppercase text-dark-900 mb-3">
-                Make Your Design
-              </h3>
-              <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
-                Precision manufacturing in our Mumbai facility, delivered safely to your home, and completely installed with zero dust within 72 hours.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* 10. Official Instagram Posts & Real Projects Showcase */}
+      <InstagramShowcase onOpenQuote={() => onOpenQuote()} />
 
-      {/* 5. Authentic Slogan / Callout Banner */}
-      <section className="relative py-16 bg-dark-950 text-white overflow-hidden border-y-2 border-gold/40">
-        <div
-          className="absolute inset-0 bg-cover bg-center opacity-25"
-          style={{ backgroundImage: `url('/images/slides/2.jpg')` }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-dark-950 via-dark-950/90 to-dark-950/70" />
-
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-8">
-          <div>
-            <span className="text-gold text-xs font-bold uppercase tracking-widest block mb-2">
-              Transform Your Cooking Space
-            </span>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold uppercase tracking-tight text-white mb-2">
-              MAKING BEAUTIFUL OUR KITCHEN
-            </h2>
-            <p className="text-gray-300 text-sm sm:text-base italic">
-              "Quality is what we pursue, We know what we do"
-            </p>
-            <p className="text-sm font-semibold text-gold mt-3 flex items-center justify-center sm:justify-start gap-2">
-              <Phone className="w-4 h-4" />
-              <span>Contact Us Now: <a href={`tel:${siteConfig.phone}`} className="hover:underline font-bold text-white">+{siteConfig.phone}</a></span>
-            </p>
-          </div>
-
-          <div className="flex flex-wrap items-center gap-4">
-            <Button onClick={onOpenQuote} variant="gold" size="lg">
-              Get Free Consultation
-            </Button>
-            <Button to="/contact" variant="outline" size="lg">
-              Contact Us
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* 6. Brand Hardware Partners */}
+      {/* 11. Hardware Partners */}
       <BrandPartners />
 
-      {/* 7. Regional Locations Quick Directory */}
+      {/* 11. Regional Locations Directory */}
       <section className="py-12 bg-light-100 border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-6">
-            <h3 className="text-base font-extrabold uppercase text-dark-900 tracking-wider">
-              Serving Across Mumbai, Thane & Navi Mumbai
-            </h3>
-            <p className="text-xs text-gray-500 mt-1">
-              Select your region to explore local modular kitchen installations and showrooms
-            </p>
-          </div>
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+            <div>
+              <span className="text-xs uppercase font-extrabold tracking-widest text-brand-orange block mb-1">
+                Regional Hubs & Coverage
+              </span>
+              <h3 className="text-base sm:text-lg font-extrabold uppercase text-navy-950">
+                Serving Ulhasnagar, Kalyan, Thane, Mumbai, Pune & Greater Maharashtra
+              </h3>
+            </div>
 
-          <div className="flex flex-wrap justify-center gap-2">
-            {regionalQuickLinks.map((region, idx) => (
-              <Link
-                key={idx}
-                to={region.path}
-                className="px-3.5 py-1.5 rounded-full bg-white hover:bg-gold hover:text-white text-dark-800 text-xs font-semibold shadow-sm transition-all duration-200 border border-gray-200 hover:border-gold"
-              >
-                {region.label}
-              </Link>
-            ))}
+            <div className="flex flex-wrap items-center gap-2">
+              {regionalQuickLinks.map((loc, i) => (
+                <Link
+                  key={i}
+                  to={loc.path || `/services#${loc.slug}`}
+                  className="px-3 py-1.5 rounded-lg bg-white hover:bg-brand-orange hover:text-white text-xs font-semibold text-gray-700 transition-colors border border-gray-200 shadow-2xs"
+                >
+                  {loc.label || loc.name}
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </section>
+
+      {/* 12. Final Call-to-Action Section */}
+      <CallToAction onOpenQuote={() => onOpenQuote()} />
+
     </div>
   );
 };

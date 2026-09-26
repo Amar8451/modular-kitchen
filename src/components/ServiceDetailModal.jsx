@@ -14,15 +14,15 @@ const ServiceDetailModal = ({ service, onClose, onEnquire }) => {
   if (!service) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-dark-950/80 backdrop-blur-sm animate-fadeIn">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-navy-950/80 backdrop-blur-md animate-fadeIn">
       <div
-        className="relative w-full max-w-2xl bg-white rounded-2xl shadow-2xl border-2 border-gold/30 overflow-hidden transform transition-all max-h-[90vh] flex flex-col"
+        className="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl border border-white/20 overflow-hidden transform transition-all max-h-[90vh] flex flex-col"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-dark-900/80 text-white hover:bg-gold flex items-center justify-center transition-colors"
+          className="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-navy-950/80 text-white hover:bg-brand-orange flex items-center justify-center transition-colors"
           aria-label="Close details"
         >
           <X className="w-5 h-5" />
